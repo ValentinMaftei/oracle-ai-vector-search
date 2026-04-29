@@ -8,13 +8,6 @@
 - `workspace.sql`: Fișier SQL pentru crearea tabelei „documents” și încărcarea modelului de embedding.
 - `search_types/`: Folder cu fișierele SQL pentru fiecare tip de căutare (keyword, vector și hybrid).
 
-```bash
-docker compose up -d
-
-uv sync
-
-optimum-cli export onnx --model sentence-transformers/all-MiniLM-L12-v2 all-MiniLM-L12-v2_onnx/
-```
 
 ## Workflow
 
