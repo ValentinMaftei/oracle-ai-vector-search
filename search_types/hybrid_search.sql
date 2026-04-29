@@ -18,13 +18,11 @@ FROM dual;
 SELECT jt.*
 FROM DUAL,
      JSON_TABLE(
-        -- Aici pui funcția ta care returnează JSON-ul
         DBMS_HYBRID_VECTOR.SEARCH(
             json('{ "hybrid_index_name" : "documents_hybrid_idx",
                     "search_text"       : "Who invented the plane?"
                 }')
         ),
-        -- Calea către array-ul de rezultate
         '$[*]' 
         COLUMNS (
             r_id          VARCHAR2(20)   PATH '$.rowid',
